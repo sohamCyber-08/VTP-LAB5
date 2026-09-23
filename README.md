@@ -150,7 +150,7 @@ Verify the configured VLANs using:
 
 Expected:
 
-````markdown
+
 ## 🧪 VLAN Database Verification
 
 ### 🔴 CLIENT — VTP Server Mode
