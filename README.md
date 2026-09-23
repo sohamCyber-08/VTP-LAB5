@@ -162,8 +162,9 @@ VLAN 10
 VLAN 20
 VLAN 30
 ````
+<img width="1137" height="557" alt="Screenshot 2026-09-23 094833" src="https://github.com/user-attachments/assets/d351c6a2-9f6f-40c1-8d4f-c061d322bf3c" />
 
-<img width="1175" height="602" alt="CLIENT Switch - VTP Server Mode VLANs" src="https://github.com/user-attachments/assets/6b6de899-3ee0-4e25-96cf-0df7047acb3d" />
+
 
 <br>
 <br>
@@ -178,7 +179,8 @@ VLAN 40
 VLAN 50
 ```
 
-<img width="1226" height="588" alt="TRANSPARENT Switch - VTP Transparent Mode VLANs" src="https://github.com/user-attachments/assets/d94751cd-1767-45d2-b3a1-35b70e9b4733" />
+<img width="1006" height="545" alt="Screenshot 2026-09-23 094713" src="https://github.com/user-attachments/assets/2013d24a-7df1-42c8-8b57-76dfecdc9262" />
+
 
 <br>
 <br>
@@ -194,38 +196,14 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1145" height="482" alt="SERVER Switch - VTP Client Mode VLANs" src="https://github.com/user-attachments/assets/13211261-11ad-45eb-8f0c-e2cccf3964f0" />
+<img width="985" height="437" alt="Screenshot 2026-09-23 094604" src="https://github.com/user-attachments/assets/d77c3983-acb6-40fb-b9f8-74c116c85d9f" />
+
 
 <br>
 <br>
 <br>
 ```
 
-
-
-### Trunk Verification
-
-Verify the trunk interfaces using:
-
-```text
-show interfaces trunk
-```
-
-
-The inter-switch interfaces should operate as **802.1Q trunks**.
-
-### VTP Information
-
-Verify the following information using:
-
-
-
-* VTP Domain
-* VTP Mode
-* VTP Version
-* Configuration Revision
-
-<img width="985" height="437" alt="Screenshot 2026-09-23 094604" src="https://github.com/user-attachments/assets/fd6dba10-4174-41cf-b7c3-ed6bc458ef2f" />
 
 
 
