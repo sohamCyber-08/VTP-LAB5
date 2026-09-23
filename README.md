@@ -230,23 +230,8 @@ VLAN 30
 <br>
 <br>
 
-### 📋 VLAN Database Command
 
-Verify the configured VLANs using:
 
-```text
-show vlan brief
-```
-
-Expected:
-
-```text
-SERVER        → VLAN 10, 20, 30
-TRANSPARENT   → VLAN 40, 50
-CLIENT        → VLAN 10, 20, 30
-```
-
-<br>
 
 
 
@@ -311,12 +296,5 @@ VTP advertisements to traverse the switching topology.
 The lab demonstrates how **VTP Server, Client, and Transparent
 modes handle VLAN information differently**.
 
-## 📚 Key Commands
 
-```text
-show vtp status
-show vlan brief
-show interfaces trunk
-show running-config
-```
 ````
