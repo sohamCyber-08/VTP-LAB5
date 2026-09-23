@@ -1,4 +1,4 @@
-````markdown
+
 # 🧪 VTP Transparent Mode Lab
  
 ## 🎯 Objective
