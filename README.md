@@ -34,6 +34,7 @@ This lab demonstrates:
           |
         SERVER
    VLAN 10 / 20 / 30
+```
 🌐 VLAN Configuration
 CLIENT Switch
 VLAN	Purpose
