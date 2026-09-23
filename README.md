@@ -108,6 +108,20 @@ TRANSPARENT
    |
 SERVER
 ```
+### 🔴 Server Mode Switch — Trunk Interfaces
+
+<img width="940" height="387" alt="Server Mode Switch Trunk Interfaces" src="https://github.com/user-attachments/assets/66768b32-f251-4515-bd4d-ecd4767628b6" />
+
+### 🔵 Transparent Mode Switch — Trunk Interfaces
+
+<img width="1072" height="372" alt="Transparent Mode Switch Trunk Interfaces" src="https://github.com/user-attachments/assets/16b0510e-2590-4ed6-af18-1ccc4588a320" />
+
+### 🟢 Client Mode Switch — Trunk Interfaces
+
+<img width="1226" height="298" alt="Client Mode Switch Trunk Interfaces" src="https://github.com/user-attachments/assets/63e509a6-0c51-4fa5-9829-72675e21564b" />
+
+
+
 
 The trunk links allow multiple VLANs to traverse a single
 physical connection.
@@ -128,24 +142,66 @@ TRANSPARENT   → Transparent
 SERVER        → Client
 ```
 
+
 ### VLAN Database
 
 Verify the configured VLANs using:
 
-```text
-show vlan brief
-```
 
 Expected:
 
+````markdown
+## 🧪 VLAN Database Verification
+
+### 🔴 CLIENT — VTP Server Mode
+
+**Expected VLANs:**
+
 ```text
-CLIENT        → VLAN 10, 20, 30
-TRANSPARENT   → VLAN 40, 50
-SERVER        → VLAN 10, 20, 30
+VLAN 10
+VLAN 20
+VLAN 30
+````
 
-<img width="940" height="387" alt="Screenshot 2026-09-23 094641" src="https://github.com/user-attachments/assets/39fee105-e8ee-4586-a8de-842d7679343d" />
+<img width="1175" height="602" alt="CLIENT Switch - VTP Server Mode VLANs" src="https://github.com/user-attachments/assets/6b6de899-3ee0-4e25-96cf-0df7047acb3d" />
 
+<br>
+<br>
+<br>
+
+### 🔵 TRANSPARENT — VTP Transparent Mode
+
+**Expected VLANs:**
+
+```text
+VLAN 40
+VLAN 50
 ```
+
+<img width="1226" height="588" alt="TRANSPARENT Switch - VTP Transparent Mode VLANs" src="https://github.com/user-attachments/assets/d94751cd-1767-45d2-b3a1-35b70e9b4733" />
+
+<br>
+<br>
+<br>
+
+### 🟢 SERVER — VTP Client Mode
+
+**Expected VLANs:**
+
+```text
+VLAN 10
+VLAN 20
+VLAN 30
+```
+
+<img width="1145" height="482" alt="SERVER Switch - VTP Client Mode VLANs" src="https://github.com/user-attachments/assets/13211261-11ad-45eb-8f0c-e2cccf3964f0" />
+
+<br>
+<br>
+<br>
+```
+
+
 
 ### Trunk Verification
 
