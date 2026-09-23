@@ -1,3 +1,4 @@
+
 # 🧪 VTP Transparent Mode Lab
  
 ## 🎯 Objective
@@ -9,15 +10,16 @@ database independence, VTP advertisement forwarding, and
  
 ## 🖥️ Topology 
  
-CLIENT ─── TRANSPARENT ─── SERVER
+SERVER ─── TRANSPARENT ─── CLIENT
  
-**CLIENT:** VLAN 10, VLAN 20, VLAN 30  
+**SERVER:** VLAN 10, VLAN 20, VLAN 30  
 **TRANSPARENT:** VLAN 40, VLAN 50  
-**SERVER:** VLAN 10, VLAN 20, VLAN 30
+**CLIENT:** VLAN 10, VLAN 20, VLAN 30
 
 <br>
 <br>
 <br>
+
 <img width="1218" height="761" alt="Screenshot 2026-09-23 094507" src="https://github.com/user-attachments/assets/d033e935-0640-47c8-979d-3ac86c3c5a74" />
 
 <br>
@@ -38,11 +40,11 @@ CLIENT ─── TRANSPARENT ─── SERVER
 
 ## ⚙️ VTP Configuration
 
-### 🔴 CLIENT — VTP Server Mode
+### 🔴 SERVER — VTP Server Mode
  
 **VTP Mode:** Server
  
-The CLIENT switch operates in **VTP Server mode** and maintains 
+The SERVER switch operates in **VTP Server mode** and maintains 
 the VLAN database for:
  
 ```text
@@ -51,7 +53,7 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1175" height="602" alt="Screenshot 2026-09-23 094853" src="https://github.com/user-attachments/assets/5ff912a2-76e2-4df8-9583-319aa6a8ef12" />
+<img width="1175" height="602" alt="SERVER Switch - VTP Server Mode" src="https://github.com/user-attachments/assets/5ff912a2-76e2-4df8-9583-319aa6a8ef12" />
 
 <br>
 <br>
@@ -73,17 +75,17 @@ VLAN 50
 The switch does not synchronize its local VLAN database with
 the VTP Server.
 
-<img width="1226" height="588" alt="Screenshot 2026-09-23 094759" src="https://github.com/user-attachments/assets/1db0e3c2-0b87-485a-a6b5-6100375b795a" />
+<img width="1226" height="588" alt="TRANSPARENT Switch - VTP Transparent Mode" src="https://github.com/user-attachments/assets/1db0e3c2-0b87-485a-a6b5-6100375b795a" />
 
 <br>
 <br>
 <br>
 
-### 🟢 SERVER — VTP Client Mode
+### 🟢 CLIENT — VTP Client Mode
 
 **VTP Mode:** Client
 
-The SERVER switch operates in **VTP Client mode** and receives
+The CLIENT switch operates in **VTP Client mode** and receives
 VLAN information through VTP advertisements.
 
 Expected VLANs:
@@ -94,7 +96,7 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1145" height="482" alt="Screenshot 2026-09-23 094631" src="https://github.com/user-attachments/assets/f9763f83-6b7f-4890-834a-5a1fa7a0a9f1" />
+<img width="1145" height="482" alt="CLIENT Switch - VTP Client Mode" src="https://github.com/user-attachments/assets/f9763f83-6b7f-4890-834a-5a1fa7a0a9f1" />
 
 <br>
 <br>
@@ -105,7 +107,7 @@ VLAN 30
 The inter-switch links are configured as **802.1Q trunk links**.
 
 ```text
-CLIENT
+SERVER
    |
    | 802.1Q Trunk
    |
@@ -113,7 +115,7 @@ TRANSPARENT
    |
    | 802.1Q Trunk
    |
-SERVER
+CLIENT
 ```
 
 ### 🔴 Server Mode Switch — Trunk Interfaces
@@ -156,9 +158,9 @@ show vtp status
 Expected:
 
 ```text
-CLIENT        → Server
+SERVER        → Server
 TRANSPARENT   → Transparent
-SERVER        → Client
+CLIENT        → Client
 ```
 
 <br>
@@ -168,7 +170,7 @@ SERVER        → Client
 After configuring the VTP modes and trunk links, verify the
 VLAN database on each switch.
 
-### 🔴 CLIENT — VTP Server Mode
+### 🔴 SERVER — VTP Server Mode
 
 **Expected VLANs:**
 
@@ -178,7 +180,7 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1137" height="557" alt="Screenshot 2026-09-23 094833" src="https://github.com/user-attachments/assets/d351c6a2-9f6f-40c1-8d4f-c061d322bf3c" />
+<img width="1137" height="557" alt="SERVER Switch - VTP Server Mode VLANs" src="https://github.com/user-attachments/assets/d351c6a2-9f6f-40c1-8d4f-c061d322bf3c" />
 
 <br>
 <br>
@@ -193,13 +195,13 @@ VLAN 40
 VLAN 50
 ```
 
-<img width="1006" height="545" alt="Screenshot 2026-09-23 094713" src="https://github.com/user-attachments/assets/2013d24a-7df1-42c8-8b57-76dfecdc9262" />
+<img width="1006" height="545" alt="TRANSPARENT Switch - VTP Transparent Mode VLANs" src="https://github.com/user-attachments/assets/2013d24a-7df1-42c8-8b57-76dfecdc9262" />
 
 <br>
 <br>
 <br>
 
-### 🟢 SERVER — VTP Client Mode
+### 🟢 CLIENT — VTP Client Mode
 
 **Expected VLANs:**
 
@@ -209,7 +211,7 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="985" height="437" alt="Screenshot 2026-09-23 094604" src="https://github.com/user-attachments/assets/d77c3983-acb6-40fb-b9f8-74c116c85d9f" />
+<img width="985" height="437" alt="CLIENT Switch - VTP Client Mode VLANs" src="https://github.com/user-attachments/assets/d77c3983-acb6-40fb-b9f8-74c116c85d9f" />
 
 <br>
 <br>
@@ -226,9 +228,9 @@ show vlan brief
 Expected:
 
 ```text
-CLIENT        → VLAN 10, 20, 30
-TRANSPARENT   → VLAN 40, 50
 SERVER        → VLAN 10, 20, 30
+TRANSPARENT   → VLAN 40, 50
+CLIENT        → VLAN 10, 20, 30
 ```
 
 <br>
@@ -263,17 +265,17 @@ show vtp status
 ### VTP Transparent Operation
 
 ```mermaid
-flowchart TD 
-    A[CLIENT<br/>VTP Server] --> B[Creates VLAN 10 / 20 / 30] 
-    B --> C[802.1Q Trunk] 
-    C --> D[TRANSPARENT<br/>VTP Transparent] 
-    D --> E[VTP Advertisement] 
-    E --> F[Advertisement Forwarded] 
-    F --> G[802.1Q Trunk] 
-    G --> H[SERVER<br/>VTP Client] 
-    H --> I[Receives VTP Information] 
-    I --> J[Maintains VLAN 10 / 20 / 30] 
-    D --> K[Maintains Local VLAN 40 / 50] 
+flowchart TD
+    A[SERVER<br/>VTP Server] --> B[Creates VLAN 10 / 20 / 30]
+    B --> C[802.1Q Trunk]
+    C --> D[TRANSPARENT<br/>VTP Transparent]
+    D --> E[VTP Advertisement]
+    E --> F[Advertisement Forwarded]
+    F --> G[802.1Q Trunk]
+    G --> H[CLIENT<br/>VTP Client]
+    H --> I[Receives VTP Information]
+    I --> J[Maintains VLAN 10 / 20 / 30]
+    D --> K[Maintains Local VLAN 40 / 50]
 ```
 
 ## 📌 VTP Transparent Behavior
@@ -305,14 +307,14 @@ It:
 
 The topology successfully demonstrates **VTP Transparent mode**.
 
-The TRANSPARENT switch maintains its own local VLAN database 
-containing **VLAN 40 and VLAN 50** instead of synchronizing its 
+The TRANSPARENT switch maintains its own local VLAN database
+containing **VLAN 40 and VLAN 50** instead of synchronizing its
 local VLAN database with the VTP Server.
 
-The inter-switch links operate as **802.1Q trunks**, allowing 
+The inter-switch links operate as **802.1Q trunks**, allowing
 VTP advertisements to traverse the switching topology.
 
-The lab demonstrates how **VTP Server, Client, and Transparent 
+The lab demonstrates how **VTP Server, Client, and Transparent
 modes handle VLAN information differently**.
 
 ## 📚 Key Commands
@@ -323,3 +325,4 @@ show vlan brief
 show interfaces trunk
 show running-config
 ```
+````
