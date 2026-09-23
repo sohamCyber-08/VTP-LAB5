@@ -110,7 +110,7 @@ VLAN 30
 The inter-switch links are configured as **802.1Q trunk links**.
 
 ```text
-SERVER
+CLIENT
    |
    | 802.1Q Trunk
    |
@@ -118,7 +118,7 @@ TRANSPARENT
    |
    | 802.1Q Trunk
    |
-CLIENT
+SERVER
 ```
 
 ### 🔴 Server Mode Switch — Trunk Interfaces
@@ -149,14 +149,19 @@ The trunk links allow multiple VLANs to traverse a single
 physical connection.
 
 ## 🔍 Verification
+### 📋 VTP Information
 
-### 📋 VTP Status
-
-Verify the VTP mode on each switch using:
+Verify the following information using:
 
 ```text
 show vtp status
 ```
+
+- VTP Domain
+- VTP Mode
+- VTP Version
+- Configuration Revision
+  
 
 Expected:
 
@@ -165,6 +170,8 @@ SERVER        → Server
 TRANSPARENT   → Transparent
 CLIENT        → Client
 ```
+<br>
+<img width="1890" height="963" alt="Screenshot 2026-09-23 111553" src="https://github.com/user-attachments/assets/e5cb2de2-3ca4-4270-bf75-f311e894a6aa" />
 
 <br>
 
@@ -241,30 +248,11 @@ CLIENT        → VLAN 10, 20, 30
 
 <br>
 
-### 📋 Trunk Verification
 
-Verify the trunk interfaces using:
 
-```text
-show interfaces trunk
-```
-
-The inter-switch interfaces should operate as **802.1Q trunk links**.
 
 <br>
 
-### 📋 VTP Information
-
-Verify the following information using:
-
-```text
-show vtp status
-```
-
-- VTP Domain
-- VTP Mode
-- VTP Version
-- Configuration Revision
 
 ## 📊 VTP Communication Process
 
