@@ -15,7 +15,12 @@ CLIENT ─── TRANSPARENT ─── SERVER
 **CLIENT:** VLAN 10, VLAN 20, VLAN 30  
 **TRANSPARENT:** VLAN 40, VLAN 50  
 **SERVER:** VLAN 10, VLAN 20, VLAN 30
- 
+
+
+<br>
+<img width="1218" height="761" alt="Screenshot 2026-09-23 094507" src="https://github.com/user-attachments/assets/d033e935-0640-47c8-979d-3ac86c3c5a74" />
+
+ <br>
 ## 🌐 VLAN Configuration 
  
 | Device | VLANs | VTP Mode |
