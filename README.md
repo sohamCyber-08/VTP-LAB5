@@ -35,37 +35,50 @@ This lab demonstrates:
         SERVER
    VLAN 10 / 20 / 30
 ```
+<br>
 🌐 VLAN Configuration
-CLIENT Switch
+🔴 CLIENT Switch
 VLAN	Purpose
 VLAN 10	User Network
 VLAN 20	User Network
 VLAN 30	User Network
-TRANSPARENT Switch
+<br>
+🔵 TRANSPARENT Switch
 VLAN	Purpose
 VLAN 40	Local VLAN
 VLAN 50	Local VLAN
-SERVER Switch
+<br>
+🔴 SERVER Switch
 VLAN	Purpose
 VLAN 10	User Network
 VLAN 20	User Network
 VLAN 30	User Network
+<br>
 🔧 Technologies
 Cisco IOS
 VTP
 VTP Transparent Mode
+VTP Server Mode
+VTP Client Mode
 802.1Q Trunking
 VLAN
 Layer 2 Switching
 MAC Address Learning
+<br>
 ⚙️ VTP Configuration
-CLIENT Switch
+🔴 CLIENT Switch
+
 VTP Mode: Server
 
 The CLIENT switch operates as the VTP Server and maintains
-the VLAN database for VLAN 10, VLAN 20, and VLAN 30.
+the VLAN database for:
 
-TRANSPARENT Switch
+VLAN 10
+VLAN 20
+VLAN 30
+<br>
+🔵 TRANSPARENT Switch
+
 VTP Mode: Transparent
 
 The TRANSPARENT switch maintains its own local VLAN database.
@@ -76,15 +89,23 @@ Locally configured VLANs:
 
 VLAN 40
 VLAN 50
-SERVER Switch
+<br>
+🔴 SERVER Switch
+
 VTP Mode: Client
 
-The SERVER switch receives VTP information and learns VLAN
-information from the VTP domain.
+The SERVER switch operates as a VTP Client and receives VLAN
+information through VTP advertisements.
 
+Expected VLANs:
+
+VLAN 10
+VLAN 20
+VLAN 30
+<br>
 🔗 Trunk Configuration
 
-The inter-switch links are configured as 802.1Q trunks.
+The inter-switch links are configured as 802.1Q trunk links.
 
 CLIENT
    |
@@ -95,12 +116,14 @@ TRANSPARENT
    | 802.1Q Trunk
    |
 SERVER
+<br>
 
 The trunk links allow multiple VLANs to traverse a single
 physical connection.
 
+<br>
 🔍 Verification
-Check VTP Status
+📋 Check VTP Status
 show vtp status
 
 Verify the VTP mode on each switch.
@@ -110,30 +133,36 @@ Expected:
 CLIENT        → Server
 TRANSPARENT   → Transparent
 SERVER        → Client
-Check VLAN Database
+<br>
+📋 Check VLAN Database
 show vlan brief
 
 Verify:
 
-CLIENT → VLAN 10, 20, 30
-TRANSPARENT → VLAN 40, 50
-SERVER → VLAN 10, 20, 30
-Check Trunk Status
+CLIENT        → VLAN 10, 20, 30
+TRANSPARENT   → VLAN 40, 50
+SERVER        → VLAN 10, 20, 30
+<br>
+📋 Check Trunk Status
 show interfaces trunk
 
-Verify that the inter-switch interfaces are operating as trunks.
+Verify that the inter-switch interfaces are operating as
+802.1Q trunk links.
 
-Check VTP Configuration
+<br>
+📋 Check VTP Configuration
 show vtp status
 
 Verify:
 
-VTP domain
-VTP mode
-VTP version
-Configuration revision
-📊 Communication Process
-VTP Transparent Operation
+VTP Domain
+VTP Mode
+VTP Version
+Configuration Revision
+<br>
+📊 VTP Communication Process
+🔄 VTP Transparent Operation
+<br>
 📌 VTP Transparent Behavior
 
 The Transparent switch behaves differently from a VTP Client.
@@ -141,12 +170,13 @@ The Transparent switch behaves differently from a VTP Client.
 It:
 
 Maintains its own VLAN database.
-Does not learn VLAN configuration from the VTP Server.
-Does not synchronize its local VLAN database.
-Can have locally created VLANs such as VLAN 40 and VLAN 50.
+Does not synchronize its VLAN database with the VTP Server.
+Can create VLANs locally.
+Maintains locally configured VLANs such as VLAN 40 and VLAN 50.
 Forwards VTP advertisements through trunk links when applicable.
+<br>
 🧪 VLAN Database Verification
-CLIENT
+🔴 CLIENT
 show vlan brief
 
 Expected VLANs:
@@ -154,14 +184,16 @@ Expected VLANs:
 10
 20
 30
-TRANSPARENT
+<br>
+🔵 TRANSPARENT
 show vlan brief
 
 Expected VLANs:
 
 40
 50
-SERVER
+<br>
+🔴 SERVER
 show vlan brief
 
 Expected VLANs:
@@ -169,23 +201,31 @@ Expected VLANs:
 10
 20
 30
+<br>
 🧠 Key Learning
-VTP Server mode
-VTP Client mode
-VTP Transparent mode
-VTP VLAN synchronization
-VLAN database independence
-VTP advertisement forwarding
-802.1Q trunking
-VLAN propagation
-Layer 2 switching
+VTP Server Mode
+VTP Client Mode
+VTP Transparent Mode
+VTP VLAN Synchronization
+VLAN Database Independence
+VTP Advertisement Forwarding
+802.1Q Trunking
+VLAN Propagation
+Layer 2 Switching
+VLAN Database Verification
+<br>
 ✅ Result
 
 The topology successfully demonstrates VTP Transparent mode.
 
 The TRANSPARENT switch maintains its own local VLAN database
-containing VLAN 40 and VLAN 50 instead of synchronizing its VLAN
-database with the VTP Server.
+containing VLAN 40 and VLAN 50 instead of synchronizing its
+local VLAN database with the VTP Server.
 
-The trunk links provide the Layer 2 path between the switches,
-while the VTP modes determine how VLAN information is handled.
+The inter-switch links operate as 802.1Q trunks, allowing
+VLAN traffic and VTP advertisements to traverse the links.
+
+This lab demonstrates how VTP Server, Client, and Transparent
+modes behave differently within a Cisco switching environment.
+
+<br>
