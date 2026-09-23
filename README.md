@@ -53,7 +53,8 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1175" height="602" alt="SERVER Switch - VTP Server Mode" src="https://github.com/user-attachments/assets/5ff912a2-76e2-4df8-9583-319aa6a8ef12" />
+<img width="985" height="437" alt="Screenshot 2026-09-23 094604" src="https://github.com/user-attachments/assets/8910cd99-d512-48ce-929b-5a20a00df96d" />
+
 
 <br>
 <br>
@@ -75,7 +76,8 @@ VLAN 50
 The switch does not synchronize its local VLAN database with
 the VTP Server.
 
-<img width="1226" height="588" alt="TRANSPARENT Switch - VTP Transparent Mode" src="https://github.com/user-attachments/assets/1db0e3c2-0b87-485a-a6b5-6100375b795a" />
+<img width="1006" height="545" alt="Screenshot 2026-09-23 094713" src="https://github.com/user-attachments/assets/f0e953d5-3b22-4757-9008-fc9e6843e9b3" />
+
 
 <br>
 <br>
@@ -96,7 +98,8 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1145" height="482" alt="CLIENT Switch - VTP Client Mode" src="https://github.com/user-attachments/assets/f9763f83-6b7f-4890-834a-5a1fa7a0a9f1" />
+<img width="1137" height="557" alt="Screenshot 2026-09-23 094833" src="https://github.com/user-attachments/assets/308d8f6c-d03b-4caf-804f-73f2b0ff8617" />
+
 
 <br>
 <br>
@@ -180,7 +183,8 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="1137" height="557" alt="SERVER Switch - VTP Server Mode VLANs" src="https://github.com/user-attachments/assets/d351c6a2-9f6f-40c1-8d4f-c061d322bf3c" />
+<img width="1145" height="482" alt="Screenshot 2026-09-23 094631" src="https://github.com/user-attachments/assets/fb970435-4d79-40c5-a0e1-f8b1d98ea8d4" />
+
 
 <br>
 <br>
@@ -195,7 +199,8 @@ VLAN 40
 VLAN 50
 ```
 
-<img width="1006" height="545" alt="TRANSPARENT Switch - VTP Transparent Mode VLANs" src="https://github.com/user-attachments/assets/2013d24a-7df1-42c8-8b57-76dfecdc9262" />
+<img width="1226" height="588" alt="Screenshot 2026-09-23 094759" src="https://github.com/user-attachments/assets/3cd3ed37-909d-47a4-a7d4-952df80c8d57" />
+
 
 <br>
 <br>
@@ -211,7 +216,8 @@ VLAN 20
 VLAN 30
 ```
 
-<img width="985" height="437" alt="CLIENT Switch - VTP Client Mode VLANs" src="https://github.com/user-attachments/assets/d77c3983-acb6-40fb-b9f8-74c116c85d9f" />
+<img width="1175" height="602" alt="Screenshot 2026-09-23 094853" src="https://github.com/user-attachments/assets/bcb33ac7-d5ce-4a70-b51b-b1c428ec18de" />
+
 
 <br>
 <br>
