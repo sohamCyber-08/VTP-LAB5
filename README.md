@@ -58,6 +58,7 @@ VLAN 10
 VLAN 20
 VLAN 30
 ````
+<img width="1175" height="602" alt="Screenshot 2026-09-23 094853" src="https://github.com/user-attachments/assets/5ff912a2-76e2-4df8-9583-319aa6a8ef12" />
 
 ### TRANSPARENT
 
@@ -74,6 +75,7 @@ VLAN 50
 
 The switch does not synchronize its local VLAN database with
 the VTP Server.
+<img width="1226" height="588" alt="Screenshot 2026-09-23 094759" src="https://github.com/user-attachments/assets/1db0e3c2-0b87-485a-a6b5-6100375b795a" />
 
 ### SERVER
 
@@ -89,6 +91,7 @@ VLAN 10
 VLAN 20
 VLAN 30
 ```
+<img width="1145" height="482" alt="Screenshot 2026-09-23 094631" src="https://github.com/user-attachments/assets/f9763f83-6b7f-4890-834a-5a1fa7a0a9f1" />
 
 ## 🔗 Trunk Configuration
 
@@ -115,9 +118,7 @@ physical connection.
 
 Verify the VTP mode on each switch using:
 
-```text
-show vtp status
-```
+
 
 Expected:
 
@@ -141,6 +142,9 @@ Expected:
 CLIENT        → VLAN 10, 20, 30
 TRANSPARENT   → VLAN 40, 50
 SERVER        → VLAN 10, 20, 30
+
+<img width="940" height="387" alt="Screenshot 2026-09-23 094641" src="https://github.com/user-attachments/assets/39fee105-e8ee-4586-a8de-842d7679343d" />
+
 ```
 
 ### Trunk Verification
@@ -151,20 +155,24 @@ Verify the trunk interfaces using:
 show interfaces trunk
 ```
 
+
 The inter-switch interfaces should operate as **802.1Q trunks**.
 
 ### VTP Information
 
 Verify the following information using:
 
-```text
-show vtp status
-```
+
 
 * VTP Domain
 * VTP Mode
 * VTP Version
 * Configuration Revision
+
+<img width="985" height="437" alt="Screenshot 2026-09-23 094604" src="https://github.com/user-attachments/assets/fd6dba10-4174-41cf-b7c3-ed6bc458ef2f" />
+
+
+
 
 ## 📊 VTP Communication Process
 
@@ -266,14 +274,7 @@ VTP advertisements to traverse the switching topology.
 The lab demonstrates how **VTP Server, Client, and Transparent
 modes handle VLAN information differently**.
 
-## 📚 Key Commands
 
-```text
-show vtp status
-show vlan brief
-show interfaces trunk
-show running-config
-```
 
 ```
 ```
